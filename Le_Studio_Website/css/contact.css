@@ -1,0 +1,143 @@
+/* ======= VARIABLES ======= */
+:root {
+  --primary-color: #CFAD6C;
+  --primary-color-hover: #b3923f;
+  --secondary-color: #111;
+  --footer-bg: var(--secondary-color);
+  --footer-bg-dark: #000;
+  --text-light: #fff;
+  --text-dark: #333;
+  --text-muted: #ccc;
+
+  --section-padding: 3rem;
+  --btn-padding-y: 0.75rem;
+  --btn-padding-x: 2rem;
+
+  --font-size-sm: 0.85rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.3rem;
+  --font-size-title: 2.5rem;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  --footer-bar-width: 10px;
+  --footer-bar-height: 2px;
+  --footer-bar-margin: 0.5rem;
+}
+
+/* ========== BANNIÈRE HAUTE AVEC IMAGE ========== */
+.contact-hero {
+  background: url('../assets/img/visuel/visuel_2.jpg') no-repeat center center;
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+  position: relative;
+}
+
+/* ========== Navigation ========== */
+/* ======= NAVIGATION ======= */
+.nav-link-custom {
+  color: var(--text-light) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-link-custom:hover,
+.nav-link-custom:focus {
+  background-color: var(--primary-color);
+  color: var (--secondary-color) !important;
+}
+.dropdown-menu {
+  background-color: var(--secondary-color);
+  border: none;
+}
+.dropdown-item {
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+}
+.dropdown-item:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+
+/* ========== TITRE AVEC SOULIGNEMENT ========== */
+.title-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #cba64b;
+}
+
+/* ========== BOUTON D'ENVOI ========== */
+.btn-gold {
+  background-color: #cba64b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-gold:hover {
+  background-color: #b3923f;
+  color: white;
+}
+
+/* ========== GOOGLE MAPS ========== */
+.map-iframe {
+  height: 50vh;
+  filter: grayscale(100%) invert(92%) contrast(83%);
+}
+/* Styles pour le menu burger responsive */
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    z-index: 1000;
+    min-width: 200px;
+  }
+
+  .nav-link-custom {
+    padding: 0.5rem 1rem !important;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Style personnalisé pour le bouton hamburger */
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Correction du conteneur header pour la version mobile */
+@media (max-width: 767.98px) {
+  .header-main .container {
+    padding-right: 70px; /* Espace pour le bouton langue */
+  }
+
+  .lang-switch {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+.ms-6 {
+  margin-left: 6rem !important;
+}
