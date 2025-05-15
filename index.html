@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Studio Sport & Coaching</title>
+    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=MonteCarlo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header-main position-absolute top-0 start-0 w-100 z-3">
+      <div class="container d-flex justify-content-between align-items-center py-3">
+        <!-- Logo -->
+        <a href="index.html" class="d-flex align-items-center text-white text-decoration-none">
+          <img src="assets/img/logo.png" alt="Logo Le Studio" class="logo me-2" />
+        </a>
+
+        <!-- Bouton hamburger pour mobile -->
+        <button class="btn d-md-none text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <i class="fa fa-bars fs-4"></i>
+        </button>
+
+        <!-- Menu Desktop -->
+        <nav class="d-none d-md-block">
+          <ul class="nav align-items-center">
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="404.html">L'ÉQUIPE</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link nav-link-custom dropdown-toggle" href="#" data-bs-toggle="dropdown">LES ACTIVITÉS</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="404.html">LE CYCLING</a></li>
+                <li><a class="dropdown-item" href="presentation.html">LE TRAINING FONCTIONNEL</a></li>
+                <li><a class="dropdown-item" href="404.html">LE CROSSFIT</a></li>
+                <li><a class="dropdown-item" href="404.html">PERSONAL TRAINING - COACH PERSONNEL</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="404.html">NOS OFFRES</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="404.html">PLANNING</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="404.html">LE BLOG</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <!-- Infos / Réseaux -->
+        <div class="d-none d-md-flex align-items-center gap-3">
+          <span class="text-white fw-bold"><i class="fa fa-mobile-phone"></i> 05 59 47 84 18</span>
+          <a href="https://www.facebook.com" target="_blank" class="text-white"><i class="fa fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.tripadvisor.fr" target="_blank" class="text-white"><i class="fa fa-tripadvisor"></i></a>
+        </div>
+        
+        <!-- Langue -->
+        <div class="lang-switch d-none d-md-block">
+          <span>EN</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileMenuLabel">
+          <img src="assets/img/logo.png" alt="Logo Le Studio" height="40" />
+        </h5>
+        <div class="d-flex align-items-center">
+          <div class="lang-switch me-3">
+            <span>EN</span>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a class="nav-link text-white" href="404.html">L'ÉQUIPE</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" href="#activitesCollapse" role="button">LES ACTIVITÉS</a>
+            <div class="collapse mt-2" id="activitesCollapse">
+              <ul class="list-unstyled ps-3">
+                <li class="mb-2"><a class="text-white text-decoration-none" href="404.html">LE CYCLING</a></li>
+                <li class="mb-2"><a class="text-white text-decoration-none" href="presentation.html">LE TRAINING FONCTIONNEL</a></li>
+                <li class="mb-2"><a class="text-white text-decoration-none" href="404.html">LE CROSSFIT</a></li>
+                <li class="mb-2"><a class="text-white text-decoration-none" href="404.html">PERSONAL TRAINING</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="404.html">NOS OFFRES</a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="404.html">PLANNING</a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="404.html">LE BLOG</a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="contact.html">CONTACT</a></li>
+        </ul>
+        
+        <div class="mt-4">
+          <p class="text-white fw-bold mb-3"><i class="fa fa-mobile-phone"></i> 05 59 47 84 18</p>
+          <div class="d-flex gap-3">
+            <a href="https://www.facebook.com" target="_blank" class="text-white"><i class="fa fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.tripadvisor.fr" target="_blank" class="text-white"><i class="fa fa-tripadvisor"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDER -->
+    <section id="accueil-slider">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active slide-1">
+            <div class="carousel-caption">
+              <p class="slider-subtitle">2 inscriptions simultanées = un 3ème abonnement de 6 mois offert !</p>
+              <a href="404.html" class="btn-activite">Plus d'infos</a>
+            </div>
+          </div>
+
+          <div class="carousel-item slide-2">
+            <div class="carousel-caption">
+              <h2 class="slider-title">DES ÉQUIPEMENTS HAUT DE GAMME</h2>
+              <p class="slider-subtitle">Cardio, muscu, cycling, training fonctionnel... tout ce qu'il faut pour performer.</p>
+              <a href="404.html" class="btn-activite">Voir les équipements</a>
+            </div>
+          </div>
+
+          <div class="carousel-item slide-3">
+            <div class="carousel-caption">
+              <h2 class="slider-title">UN ACCOMPAGNEMENT SUR-MESURE</h2>
+              <p class="slider-subtitle">Coaching personnalisé adapté à vos objectifs et votre rythme de vie.</p>
+              <a href="404.html" class="btn-activite">Découvrir nos coachs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- PRÉSENTATION -->
+    <section class="container my-5">
+      <h2 class="text-center mb-4">Le Studio Sport & Coaching, Salle de sport, Fitness et crossfit à Biarritz</h2>
+      <div class="text-center">
+        <img src="assets/img/bg_titre.jpg" class="mb-4 mx-auto d-block" alt="Séparateur de titre" />
+      </div>
+      <p>Aujourd'hui beaucoup de salles de sport vendent des abonnements où vous avez accès à tous les services du club (cours collectifs, plateau musculation…) mais combien vous connaissent au point de connaître vos objectifs et de savoir si vous êtes en bonne voie pour les atteindre ?</p>
+      <p>Beaucoup de gens estiment être livrés à eux-mêmes dans ce genre de salle. Nous avons choisi la direction diamétralement opposée ! Notre seule priorité ? La qualité du Service. Notre nouveau concept de salle de sport SUR MESURE trouve une solution adaptée à votre budget et vos disponibilités. Nous œuvrons pour créer une ambiance conviviale tout en vous aidant à vous dépasser dans l'effort et ce, pour maximiser vos chances d'obtenir des résultats.</p>
+      <p>Voulez plus de Motivation, plus de Résultats, plus vite… Alors bienvenue au Studio Sport & Coaching !</p>
+    </section>
+    
+    <!-- ACTIVITÉS -->
+    <section class="section-activites">
+      <h2 class="text-center mb-4">Les Activités Proposées Au Studio Sport Biarritz</h2>
+      <div class="text-center">
+        <img src="assets/img/bg_titre.jpg" class="mb-4 mx-auto d-block" alt="Séparateur de titre" />
+      </div>
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-md-3 activite-box training">
+            <div class="overlay">
+              <img src="assets/img/activites/icon_poids.png" alt="Personal Training" class="img-fluid" />
+              <h3>PERSONAL TRAINING</h3>
+              <p>Le service 100% individualisé et adapté à vos disponibilités, votre condition physique et vos objectifs.</p>
+              <a href="404.html" class=" trait">EN SAVOIR PLUS</a>
+            </div>
+          </div>
+          <div class="col-md-3 activite-box cycling">
+            <div class="overlay">
+              <img src="assets/img/activites/icon_velo.png" alt="Cycling" class="img-fluid" />
+              <h3>CYCLING</h3>
+              <p>Des séances rythmées pour brûler un max de calories dans une ambiance énergique.</p>
+              <a href="404.html" class="trait">EN SAVOIR PLUS</a>
+
+            </div>
+          </div>
+          <div class="col-md-3 activite-box fonctionnel">
+            <div class="overlay">
+              <img src="assets/img/activites/icon_corde.png" alt="Training Fonctionnel" class="img-fluid" />
+              <h3>TRAINING FONCTIONNEL</h3>
+              <p>Travail complet et intelligent pour progresser, prévenir les blessures et performer.</p>
+              <a href="presentation.html" class="trait">EN SAVOIR PLUS</a>
+            </div>
+          </div>
+          <div class="col-md-3 activite-box crossfit">
+            <div class="overlay">
+              <img src="assets/img/activites/icon_alter.png" alt="Crossfit" class="img-fluid" />
+              <h3>CROSSFIT</h3>
+              <p>Des WODs intenses, encadrés et variés pour booster force, endurance et mental.</p>
+              <a href="404.html" class="trait float">EN SAVOIR PLUS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTUALITÉS -->
+    <section class="container my-5">
+      <h2 class="text-center mb-4">Nos Dernières Actualités</h2>
+      <div class="text-center">
+        <img src="assets/img/bg_titre.jpg" class="mb-4 mx-auto d-block" alt="Séparateur de titre" />
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img src="assets/img/news-default1.jpg" class="img-fluid activite-img mb-3" alt="Actu 1" />
+          <h5 class="mt-2">Cours Offerts Au Lancement</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/img/Salle-de-sport-nos-meilleures-adresses-pour-la-rentree-2227323408.jpg" class="img-fluid activite-img mb-3" alt="Actu 2" />
+          <h5 class="mt-2">Une Nouvelle Salle de Sport à Biarritz</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/img/L-2228469492.jpg" class="img-fluid activite-img mb-3" alt="Actu 3" />
+          <h5 class="mt-2">Premier Mois Gratuit</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTENAIRES -->
+    <section class="bg-dark py-5 text-center">
+      <div class="container">
+        <h2 class="text-white mb-4">Nos Partenaires</h2>
+        <div class="text-center">
+          <img src="assets/img/bg_titre.jpg" class="mb-4 mx-auto d-block" alt="Séparateur de titre" />
+        </div>
+        <p class="text-white mb-4">
+          Découvrez nos partenaires qui partagent notre passion pour le sport et le bien-être. 
+          En tant que membre du Studio Sport & Coaching, vous bénéficierez dans ces étabissemebt d'avantages exclusifs.
+          <a class="cliquez" href="404.html">Cliquez ici</a> pour en savoir plus.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-around align-items-center gap-4">
+          <img src="assets/img/partenaires/mini.png" alt="Mini" height="50" />
+          <img src="assets/img/partenaires/massage.png" alt="Massage" height="50" />
+          <img src="assets/img/partenaires/tellechea.png" alt="Tellechea" height="50" />
+          <img src="assets/img/partenaires/ocean.png" alt="Ocean" height="50" />
+          <img src="assets/img/partenaires/decathlon.png" alt="Décathlon" height="50" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-main text-white">
+      <img src="assets/img/a304f68f1a305b88f92231d03ce3fad8e8f6098d.png" alt="banniere-footer" class="img-fluid w-100" />
+      <div class="bg-dark py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <h6 class="text-uppercase fw-bold">
+                <img src="assets/img/logo_footer.png" alt="Logo" height="30" class="me-2">
+                À PROPOS
+              </h6>
+              <p class="text-secondary">
+                2018 © Studio Sport Biarritz<br>
+                Salle de sport, de fitness et de crossfit à Biarritz Pays basque.<br>
+                RCS : 000 000 000<br>
+                <a href="404.html" class="footer-link">Mentions légales</a>
+              </p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <h6 class="text-uppercase fw-bold">STUDIO SPORT CORPORATE</h6>
+              <ul class="list-unstyled footer-list">
+                <li><span class="footer-bar"></span> Studio Center : créez votre studio</li>
+                <li><span class="footer-bar"></span> Offres Spéciales C.E.</li>
+                <li><span class="footer-bar"></span> <a href="404.html" class="footer-link">Devenir partenaire</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+              <h6 class="text-uppercase fw-bold">FITNESS, CROSSFIT ET TRAINING AU PAYS BASQUE</h6>
+              <p class="text-secondary">
+                Coach personnel de sport à Biarritz, <a href="404.html" class="footer-link">Coach personnel de sport à Anglet</a>,
+                Salle de sport BAB, Fitness à Biarritz
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-black py-4">
+        <div class="container d-flex justify-content-center align-items-center">
+          <div class="me-3">
+            <p class="mb-0">Un site créé par</p>
+            <strong>L'AGENCE 364 COM'</strong>
+          </div>
+          <img src="assets/img/364.png" alt="Logo 364" height="35" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
