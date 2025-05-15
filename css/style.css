@@ -1,0 +1,494 @@
+/* ======= VARIABLES ======= */
+:root {
+  --primary-color: #CFAD6C;
+  --primary-color-hover: #b3923f;
+  --secondary-color: #111;
+  --footer-bg: var(--secondary-color);
+  --footer-bg-dark: #000;
+  --text-light: #fff;
+  --text-dark: #333;
+  --text-muted: #ccc;
+
+  --section-padding: 3rem;
+  --btn-padding-y: 0.75rem;
+  --btn-padding-x: 2rem;
+
+  --font-size-sm: 0.85rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.3rem;
+  --font-size-title: 2.5rem;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  --footer-bar-width: 10px;
+  --footer-bar-height: 2px;
+  --footer-bar-margin: 0.5rem;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'bebas-neue', sans-serif;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ========== HEADER ========== */
+.header-main {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.site-title {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.activite-img {
+  width: 100%;
+  max-height: 11rem;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+
+/* Hover actif sur les liens du header */
+.nav-link-custom {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.nav-link-custom:hover {
+  background-color: var(--primary-color);
+  color: rgb(0, 0, 0);
+  
+
+}
+
+/* Styles pour le dropdown menu */
+.dropdown-menu {
+  background-color: var(--secondary-color);
+  border: none;
+}
+
+.dropdown-item {
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+
+/* ========== SLIDER ========== */
+.carousel-item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.slide-1 {
+  background-image: url('../assets/img/slider/slide_1.jpg');
+}
+
+.slide-2 {
+  background-image: url('../assets/img/slider/slide_2.jpg');
+}
+
+.slide-3 {
+  background-image: url('../assets/img/slider/slide_3.jpg');
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.slider-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.slider-subtitle {
+  font-size: 1.125rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.btn-slider {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-slider:hover {
+  background-color: var(--primary-color);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: white;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary-color);
+}
+
+/* ========== MENU BURGER CUSTOM ========== */
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav.active {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li {
+  margin-bottom: 0.6rem;
+}
+
+.nav-list li a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-list li a:hover {
+  color: var(--primary-color);
+}
+
+/* ========== RÉSEAUX SOCIAUX ICONS ========== */
+a i.fab,
+a i.fa {
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+a i.fab:hover,
+a i.fa:hover {
+  color: var(--primary-color);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+
+  .main-nav {
+    display: block !important;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-list li {
+    margin: 0;
+  }
+}
+.section-activites {
+  background-color: #ffffff;
+  color: white;
+  text-align: center;
+}
+
+.section-activites h2 {
+  color: #111;
+  margin-bottom: 2rem;
+}
+.actu {
+  text-align: center;
+}
+.activite-box {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.training {
+  background-image: url('../assets/img/activites/bg_activite_1.jpg');
+}
+
+.cycling {
+  background-image: url('../assets/img/activites/bg_activite_2.jpg');
+}
+
+.fonctionnel {
+  background-image: url('../assets/img/activites/bg_activite_3.jpg');
+}
+
+.crossfit {
+  background-image: url('../assets/img/activites/bg_activite_4.jpg');
+}
+
+.overlay {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-activite {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.activite-box h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.activite-box p {
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn-activite {
+  display: inline-block;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  border: 2px solid white;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.btn-activite:hover {
+  background-color: var(--primary-color);
+  color: black;
+  border-color: var(--primary-color);
+}
+
+/* Supprimer les marges internes Bootstrap */
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gutters > [class^="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+/* ========== FOOTER ========== */
+.footer-main {
+  background-color: var(--text-dark);
+  color: #ccc;
+  font-size: 0.875rem;
+}
+
+
+.lang-switch span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.lang-switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--primary-color);
+  color: #111;
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  line-height: 1;
+  z-index: 11;
+}
+
+.lang-switch::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  border-top: 10px solid var(--primary-color);
+}
+.cliquez {
+  color: var(--primary-color);
+  
+  font-weight: bold;
+}
+
+.footer-infos {
+  padding-top: 3rem;
+}
+
+.footer-infos h6 {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer-infos p,
+.footer-infos li {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.footer-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-bar {
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  background-color: var(--primary-color);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* BOTTOM FOOTER */
+.footer-bottom {
+  background-color: #000;
+  color: #fff;
+  font-size: 0.85rem;
+}
+/* Styles pour le menu burger responsive */
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    z-index: 1000;
+    min-width: 200px;
+  }
+
+  .nav-link-custom {
+    padding: 0.5rem 1rem !important;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Style personnalisé pour le bouton hamburger */
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Correction du conteneur header pour la version mobile */
+@media (max-width: 767.98px) {
+  .header-main .container {
+    padding-right: 70px; /* Espace pour le bouton langue */
+  }
+
+  .lang-switch {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+.ms-6 {
+  margin-left: 6rem !important;
+}
