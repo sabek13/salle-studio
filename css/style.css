@@ -1,0 +1,315 @@
+/* filepath: i:\Mon Drive\Formation_DWWM\07_Projets\Le_Studio_Website\css\style.css */
+/* ======= VARIABLES ======= */
+:root {
+  --primary-color: #CFAD6C;
+  --primary-color-hover: #b3923f;
+  --secondary-color: #111;
+  --footer-bg: var(--secondary-color);
+  --footer-bg-dark: #000;
+  --text-light: #fff;
+  --text-dark: #333;
+  --text-muted: #ccc;
+  --section-padding: 3rem;
+  --btn-padding-y: 0.75rem;
+  --btn-padding-x: 2rem;
+  --font-size-sm: 0.85rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.3rem;
+  --font-size-title: 2.5rem;
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --footer-bar-width: 10px;
+  --footer-bar-height: 2px;
+  --footer-bar-margin: 0.5rem;
+}
+
+/* ======= BASE ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ======= HEADER ======= */
+.header-main {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* ======= NAVIGATION ======= */
+.nav-link-custom {
+  color: white !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link-custom:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--secondary-color);
+  border: none;
+}
+
+.dropdown-item {
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* ======= SLIDER ======= */
+.carousel-item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.slide-1 { background-image: url('../assets/img/slider/slide_1.jpg'); }
+.slide-2 { background-image: url('../assets/img/slider/slide_2.jpg'); }
+.slide-3 { background-image: url('../assets/img/slider/slide_3.jpg'); }
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.slider-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.slider-subtitle {
+  font-size: 1.125rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: white;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary-color);
+}
+
+/* ======= ACTIVITÉS ======= */
+.section-activites {
+  background-color: #ffffff;
+  color: white;
+  text-align: center;
+}
+
+.section-activites h2 {
+  color: #111;
+  margin-bottom: 2rem;
+}
+
+.activite-box {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.training { background-image: url('../assets/img/activites/bg_activite_1.jpg'); }
+.cycling { background-image: url('../assets/img/activites/bg_activite_2.jpg'); }
+.fonctionnel { background-image: url('../assets/img/activites/bg_activite_3.jpg'); }
+.crossfit { background-image: url('../assets/img/activites/bg_activite_4.jpg'); }
+
+.overlay {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Modifié de 'center' à 'space-between' */
+  align-items: center;
+}
+
+.activite-box h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.activite-box p {
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  flex-grow: 1; /* Permet au texte de prendre l'espace disponible */
+}
+
+.btn-activite {
+  display: inline-block;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  border: 2px solid white;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.btn-activite:hover {
+  background-color: var(--primary-color);
+  color: black;
+  border-color: var(--primary-color);
+}
+
+/* ======= IMAGES ET CARTES ======= */
+.activite-img {
+  width: 100%;
+  max-height: 11rem;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+
+/* ======= LANGUE ======= */
+.lang-switch {
+  position: relative;
+  background-color: var(--primary-color);
+  color: #111;
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  line-height: 1;
+  z-index: 11;
+}
+
+.lang-switch::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  border-top: 10px solid var(--primary-color);
+}
+
+.cliquez {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* ======= FOOTER ======= */
+.footer-main {
+  background-color: var(--footer-bg);
+}
+
+.footer-infos h6 {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.footer-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-bar {
+  display: inline-block;
+  width: var(--footer-bar-width);
+  height: var(--footer-bar-height);
+  background-color: var(--primary-color);
+  margin-right: var(--footer-bar-margin);
+  vertical-align: middle;
+}
+
+
+
+.trait {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.trait:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.trait:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 767.98px) {
+  .header-main .container {
+    padding-right: 70px;
+  }
+  
+    .lang-switch {
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }

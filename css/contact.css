@@ -1,0 +1,61 @@
+/* ======= VARIABLES ======= */
+:root {
+  --primary-color: #CFAD6C;
+  --primary-color-hover: #b3923f;
+  --secondary-color: #111;
+  --text-light: #fff;
+  --text-dark: #333;
+  --text-muted: #ccc;
+  --section-padding: 3rem;
+  --btn-padding-y: 0.75rem;
+  --btn-padding-x: 2rem;
+  --font-size-sm: 0.85rem;
+}
+
+/* ========== BANNIÈRE ========== */
+.contact-hero {
+  background: url('../assets/img/visuel/visuel_2.jpg') no-repeat center center;
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+  position: relative;
+}
+
+/* ========== FORMULAIRE ========== */
+.title-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 0.25rem;
+  background-color: var(--primary-color);
+}
+
+.btn-gold {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  text-transform: uppercase;
+}
+
+.btn-gold:hover {
+  background-color: var(--primary-color-hover);
+  color: white;
+}
+
+/* ========== GOOGLE MAPS ========== */
+.map-iframe {
+  height: 50vh;
+  filter: grayscale(80%) contrast(90%);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 767.98px) {
+  .contact-hero {
+    height: 30vh;
+  }
+}
