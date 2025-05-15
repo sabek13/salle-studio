@@ -227,9 +227,8 @@ body {
   background-color: var(--primary-color);
   color: #111;
   font-weight: bold;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.7rem;
   text-align: center;
-  font-size: 0.9rem;
   text-transform: uppercase;
   line-height: 1;
   z-index: 11;
@@ -283,7 +282,33 @@ body {
 }
 
 
+.trait2 {
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+}
 
+.trait2:after {
+  background: #000000;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  /* Start with a small visible line */
+  width: 30%;
+  left: 15%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+.trait2:hover:after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
 .trait {
   color: #fff;
   text-transform: uppercase;
@@ -293,6 +318,7 @@ body {
   padding: 15px 20px;
   position: relative;
 }
+
 
 .trait:after {    
   background: #fff;
