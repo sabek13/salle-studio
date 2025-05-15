@@ -1,3 +1,4 @@
+/* filepath: i:\Mon Drive\Formation_DWWM\07_Projets\Le_Studio_Website\css\style.css */
 /* ======= VARIABLES ======= */
 :root {
   --primary-color: #CFAD6C;
@@ -8,27 +9,29 @@
   --text-light: #fff;
   --text-dark: #333;
   --text-muted: #ccc;
-
   --section-padding: 3rem;
   --btn-padding-y: 0.75rem;
   --btn-padding-x: 2rem;
-
   --font-size-sm: 0.85rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.3rem;
   --font-size-title: 2.5rem;
-
   --radius-sm: 0.3rem;
   --radius-md: 0.5rem;
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
-
   --footer-bar-width: 10px;
   --footer-bar-height: 2px;
   --footer-bar-margin: 0.5rem;
 }
+.anton-regular {
+  font-family: "", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 
+/* ======= BASE ======= */
 * {
   margin: 0;
   padding: 0;
@@ -41,13 +44,15 @@ html {
 }
 
 body {
-  font-family: 'bebas-neue', sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
   background-color: #fff;
   color: #111;
   line-height: 1.6;
 }
 
-/* ========== HEADER ========== */
+/* ======= HEADER ======= */
 .header-main {
   background-color: transparent;
   position: absolute;
@@ -57,36 +62,20 @@ body {
   z-index: 10;
 }
 
-.site-title {
-  font-size: 1rem;
-  line-height: 1.2;
-}
-.activite-img {
-  width: 100%;
-  max-height: 11rem;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  margin-bottom: 1rem;
-}
-
-/* Hover actif sur les liens du header */
+/* ======= NAVIGATION ======= */
 .nav-link-custom {
-  color: white;
+  color: white !important;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  position: relative;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-link-custom:hover {
   background-color: var(--primary-color);
-  color: rgb(0, 0, 0);
-  
-
+  color: var(--secondary-color) !important;
 }
 
-/* Styles pour le dropdown menu */
 .dropdown-menu {
   background-color: var(--secondary-color);
   border: none;
@@ -103,8 +92,7 @@ body {
   color: var(--secondary-color);
 }
 
-
-/* ========== SLIDER ========== */
+/* ======= SLIDER ======= */
 .carousel-item {
   height: 100vh;
   background-size: cover;
@@ -112,17 +100,9 @@ body {
   position: relative;
 }
 
-.slide-1 {
-  background-image: url('../assets/img/slider/slide_1.jpg');
-}
-
-.slide-2 {
-  background-image: url('../assets/img/slider/slide_2.jpg');
-}
-
-.slide-3 {
-  background-image: url('../assets/img/slider/slide_3.jpg');
-}
+.slide-1 { background-image: url('../assets/img/slider/slide_1.jpg'); }
+.slide-2 { background-image: url('../assets/img/slider/slide_2.jpg'); }
+.slide-3 { background-image: url('../assets/img/slider/slide_3.jpg'); }
 
 .carousel-caption {
   position: absolute;
@@ -130,7 +110,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -154,20 +133,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.btn-slider {
-  background-color: var(--primary-color);
-  border: none;
-  color: white;
-  padding: 0.6rem 1.4rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-slider:hover {
-  background-color: var(--primary-color);
-}
-
 .carousel-indicators [data-bs-target] {
   background-color: white;
   width: 0.75rem;
@@ -179,88 +144,7 @@ body {
   background-color: var(--primary-color);
 }
 
-/* ========== MENU BURGER CUSTOM ========== */
-.burger {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.burger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  transition: 0.3s;
-}
-
-.main-nav {
-  display: none;
-}
-
-.main-nav.active {
-  display: block;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background-color: #111;
-  padding: 1rem;
-  border-radius: 5px;
-  z-index: 1000;
-}
-
-.nav-list {
-  list-style: none;
-}
-
-.nav-list li {
-  margin-bottom: 0.6rem;
-}
-
-.nav-list li a {
-  color: white;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.nav-list li a:hover {
-  color: var(--primary-color);
-}
-
-/* ========== RÉSEAUX SOCIAUX ICONS ========== */
-a i.fab,
-a i.fa {
-  font-size: 1.2rem;
-  transition: color 0.2s ease;
-}
-
-a i.fab:hover,
-a i.fa:hover {
-  color: var(--primary-color);
-}
-
-/* ========== RESPONSIVE ========== */
-@media (min-width: 768px) {
-  .burger {
-    display: none;
-  }
-
-  .main-nav {
-    display: block !important;
-    position: static;
-    background: none;
-    padding: 0;
-  }
-
-  .nav-list {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .nav-list li {
-    margin: 0;
-  }
-}
+/* ======= ACTIVITÉS ======= */
 .section-activites {
   background-color: #ffffff;
   color: white;
@@ -270,9 +154,6 @@ a i.fa:hover {
 .section-activites h2 {
   color: #111;
   margin-bottom: 2rem;
-}
-.actu {
-  text-align: center;
 }
 .activite-box {
   height: 400px;
@@ -285,21 +166,10 @@ a i.fa:hover {
   overflow: hidden;
 }
 
-.training {
-  background-image: url('../assets/img/activites/bg_activite_1.jpg');
-}
-
-.cycling {
-  background-image: url('../assets/img/activites/bg_activite_2.jpg');
-}
-
-.fonctionnel {
-  background-image: url('../assets/img/activites/bg_activite_3.jpg');
-}
-
-.crossfit {
-  background-image: url('../assets/img/activites/bg_activite_4.jpg');
-}
+.training { background-image: url('../assets/img/activites/bg_activite_1.jpg'); }
+.cycling { background-image: url('../assets/img/activites/bg_activite_2.jpg'); }
+.fonctionnel { background-image: url('../assets/img/activites/bg_activite_3.jpg'); }
+.crossfit { background-image: url('../assets/img/activites/bg_activite_4.jpg'); }
 
 .overlay {
   padding: 2rem;
@@ -307,14 +177,8 @@ a i.fa:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Modifié de 'center' à 'space-between' */
   align-items: center;
-}
-
-.icon-activite {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
 }
 
 .activite-box h3 {
@@ -327,6 +191,7 @@ a i.fa:hover {
 .activite-box p {
   font-size: 0.95rem;
   margin-bottom: 1.2rem;
+  flex-grow: 1; /* Permet au texte de prendre l'espace disponible */
 }
 
 .btn-activite {
@@ -346,36 +211,18 @@ a i.fa:hover {
   border-color: var(--primary-color);
 }
 
-/* Supprimer les marges internes Bootstrap */
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
+/* ======= IMAGES ET CARTES ======= */
+.activite-img {
+  width: 100%;
+  max-height: 11rem;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
 }
 
-.no-gutters > [class^="col-"] {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-
-/* ========== FOOTER ========== */
-.footer-main {
-  background-color: var(--text-dark);
-  color: #ccc;
-  font-size: 0.875rem;
-}
-
-
-.lang-switch span {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-}
-
+/* ======= LANGUE ======= */
 .lang-switch {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  position: relative;
   background-color: var(--primary-color);
   color: #111;
   font-weight: bold;
@@ -397,28 +244,21 @@ a i.fa:hover {
   border-right: 21px solid transparent;
   border-top: 10px solid var(--primary-color);
 }
+
 .cliquez {
   color: var(--primary-color);
-  
   font-weight: bold;
 }
 
-.footer-infos {
-  padding-top: 3rem;
+/* ======= FOOTER ======= */
+.footer-main {
+  background-color: var(--footer-bg);
 }
 
 .footer-infos h6 {
   font-size: 0.95rem;
   margin-bottom: 1rem;
   color: white;
-}
-
-.footer-infos p,
-.footer-infos li {
-  font-size: 0.85rem;
-  color: #ccc;
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
 }
 
 .footer-link {
@@ -434,61 +274,97 @@ a i.fa:hover {
 
 .footer-bar {
   display: inline-block;
-  width: 10px;
-  height: 2px;
+  width: var(--footer-bar-width);
+  height: var(--footer-bar-height);
   background-color: var(--primary-color);
-  margin-right: 0.5rem;
+  margin-right: var(--footer-bar-margin);
   vertical-align: middle;
 }
 
-/* BOTTOM FOOTER */
-.footer-bottom {
-  background-color: #000;
+
+
+.trait {
   color: #fff;
-  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
 }
-/* Styles pour le menu burger responsive */
+
+.trait:after {    
+  background: #fff;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  /* Start with a small visible line */
+  width: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.trait:hover:after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+
+/* Responsive adjustments */
 @media (max-width: 767.98px) {
-  .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 1rem;
-    border-radius: 0.25rem;
-    z-index: 1000;
-    min-width: 200px;
-  }
-
-  .nav-link-custom {
-    padding: 0.5rem 1rem !important;
-    display: block;
-    text-align: left;
+  .trait {
+    padding: 10px 15px;
   }
 }
 
-/* Style personnalisé pour le bouton hamburger */
-.navbar-toggler {
-  padding: 0.25rem 0.5rem;
-  font-size: 1rem;
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-/* Correction du conteneur header pour la version mobile */
+/* ======= RESPONSIVE ======= */
 @media (max-width: 767.98px) {
   .header-main .container {
-    padding-right: 70px; /* Espace pour le bouton langue */
+    padding-right: 70px;
+  }
+  
+    .lang-switch {
+      top: 0.5rem;
+      right: 0.5rem;
+    }
   }
 
-  .lang-switch {
-    top: 0.5rem;
-    right: 0.5rem;
+  @media (max-width: 991.98px) {
+  .carousel-item {
+    height: 75vh; /* Reduce height on medium devices */
+  }
+
+  .slider-subtitle {
+    margin-top: 30%;
+  }
+  .slider-title {
+    margin-top: 15%;
   }
 }
 
-.ms-6 {
-  margin-left: 6rem !important;
+@media (max-width: 767.98px) {
+  .carousel-item {
+    height: 60vh; /* Further reduce height on smaller devices */
+  }
+  
+  .slider-title {
+    font-size: 1.8rem;
+  }
+  
+  .slider-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .carousel-item {
+    height: 50vh; /* Even smaller on mobile devices */
+  }
+  
+  .slider-title {
+    font-size: 1.5rem;
+  }
 }

@@ -1,8 +1,3 @@
-/**
- * Système de validation personnalisé pour le formulaire de contact
- * Utilise des regex optimisées selon les spécifications
- */
-
 document.addEventListener('DOMContentLoaded', function() {
   // Sélection du formulaire
   const contactForm = document.querySelector('.col-md-6.mb-4 form');
