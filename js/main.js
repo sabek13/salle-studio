@@ -6,8 +6,7 @@ burger.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Add a class to the body that indicates hover capability
-  // This helps differentiate between touch-only and touch+hover devices
+
   const hasHoverSupport = window.matchMedia('(hover: hover)').matches;
   if (hasHoverSupport) {
     document.body.classList.add('has-hover');

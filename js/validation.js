@@ -39,10 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!errorContainer || !errorContainer.classList.contains('error-message')) {
         errorContainer = document.createElement('div');
         errorContainer.className = 'error-message';
-        errorContainer.style.color = '#dc3545';
-        errorContainer.style.fontSize = '0.875rem';
-        errorContainer.style.marginTop = '0.25rem';
-        errorContainer.style.display = 'none';
         
         // Insérer après l'input
         if (input.parentNode) {
@@ -65,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cas particulier pour le téléphone: vérifier la longueur
     if (input === telephoneInput && pattern.test(valeur)) {
       if (valeur.length < 10 || valeur.length > 15) {
-        input.style.borderLeft = '3px solid #dc3545';
+        input.classList.remove('input-valid');
+        input.classList.add('input-invalid');
         if (erreurElement) {
           erreurElement.textContent = "Le numéro doit contenir entre 10 et 15 chiffres";
           erreurElement.style.display = 'block';
@@ -78,13 +75,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const estValide = pattern.test(valeur);
     
     if (!estValide) {
-      input.style.borderLeft = '3px solid #dc3545';
+      input.classList.remove('input-valid');
+      input.classList.add('input-invalid');
       if (erreurElement) {
         erreurElement.textContent = messageErreur;
         erreurElement.style.display = 'block';
       }
     } else {
-      input.style.borderLeft = '3px solid #28a745';
+      input.classList.remove('input-invalid');
+      input.classList.add('input-valid');
       if (erreurElement) {
         erreurElement.style.display = 'none';
       }
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!input) return;
     
     input.addEventListener('focus', function() {
-      this.style.borderLeft = '';
+      this.classList.remove('input-valid', 'input-invalid');
     });
   });
 
@@ -164,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // this.submit();
       } else {
         // Faire défiler jusqu'au premier champ invalide
-        const premierChampInvalide = contactForm.querySelector('input[style*="border-left: 3px solid rgb(220, 53, 69)"], textarea[style*="border-left: 3px solid rgb(220, 53, 69)"]');
+        const premierChampInvalide = contactForm.querySelector('.input-invalid');
         if (premierChampInvalide) {
           premierChampInvalide.focus();
         }
