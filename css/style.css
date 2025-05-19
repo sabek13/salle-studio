@@ -1,96 +1,7 @@
-/* filepath: i:\Mon Drive\Formation_DWWM\07_Projets\Le_Studio_Website\css\style.css */
-/* ======= VARIABLES ======= */
-:root {
-  --primary-color: #CFAD6C;
-  --primary-color-hover: #b3923f;
-  --secondary-color: #111;
-  --footer-bg: var(--secondary-color);
-  --footer-bg-dark: #000;
-  --text-light: #fff;
-  --text-dark: #333;
-  --text-muted: #ccc;
-  --section-padding: 3rem;
-  --btn-padding-y: 0.75rem;
-  --btn-padding-x: 2rem;
-  --font-size-sm: 0.85rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.3rem;
-  --font-size-title: 2.5rem;
-  --radius-sm: 0.3rem;
-  --radius-md: 0.5rem;
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --footer-bar-width: 10px;
-  --footer-bar-height: 2px;
-  --footer-bar-margin: 0.5rem;
-}
-.anton-regular {
-  font-family: "", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+/* Imports du thème commun */
+@import 'custom-theme.css';
 
-
-
-/* ======= BASE ======= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 200;
-  font-size: 20px;
-  background-color: #fff;
-  color: #111;
-  line-height: 1.6;
-}
-
-/* ======= HEADER ======= */
-.header-main {
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-}
-
-/* ======= NAVIGATION ======= */
-.nav-link-custom {
-  color: white !important;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-link-custom:hover {
-  background-color: var(--primary-color);
-  color: var(--secondary-color) !important;
-}
-
-.dropdown-menu {
-  background-color: var(--secondary-color);
-  border: none;
-}
-
-.dropdown-item {
-  color: var(--text-light);
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-}
-
-.dropdown-item:hover {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-}
+/* ======= STYLES SPÉCIFIQUES À LA PAGE D'ACCUEIL ======= */
 
 /* ======= SLIDER ======= */
 .carousel-item {
@@ -152,7 +63,7 @@ body {
 }
 
 .section-activites h2 {
-  color: #111;
+  color: var(--secondary-color);
   margin-bottom: 2rem;
 }
 
@@ -178,7 +89,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Modifié de 'center' à 'space-between' */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -192,24 +103,7 @@ body {
 .activite-box p {
   font-size: 0.95rem;
   margin-bottom: 1.2rem;
-  flex-grow: 1; /* Permet au texte de prendre l'espace disponible */
-}
-
-.btn-activite {
-  display: inline-block;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 600;
-  border: 2px solid white;
-  padding: 0.5rem 1.2rem;
-  text-decoration: none;
-  transition: all 0.5s ease;
-}
-
-.btn-activite:hover {
-  background-color: var(--primary-color);
-  color: black;
-  border-color: var(--primary-color);
+  flex-grow: 1;
 }
 
 /* ======= IMAGES ET CARTES ======= */
@@ -227,8 +121,9 @@ body {
   background-color: var(--primary-color);
   color: #111;
   font-weight: bold;
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.6rem;
   text-align: center;
+  font-size: 0.9rem;
   text-transform: uppercase;
   line-height: 1;
   z-index: 11;
@@ -282,33 +177,7 @@ body {
 }
 
 
-.trait2 {
-  color: #000000;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 500;
-  position: relative;
-}
 
-.trait2:after {
-  background: #000000;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  position: absolute;
-  /* Start with a small visible line */
-  width: 30%;
-  left: 15%;
-  transform: translateX(-50%);
-  transition: all 0.3s ease;
-}
-.trait2:hover:after {
-  width: 100%;
-  left: 0;
-  transform: translateX(0);
-}
 .trait {
   color: #fff;
   text-transform: uppercase;
@@ -318,7 +187,6 @@ body {
   padding: 15px 20px;
   position: relative;
 }
-
 
 .trait:after {    
   background: #fff;
@@ -367,6 +235,7 @@ body {
   .slider-subtitle {
     margin-top: 30%;
   }
+  
   .slider-title {
     margin-top: 15%;
   }
