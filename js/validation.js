@@ -11,14 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const sujetInput = contactForm.querySelector('input[placeholder="Sujet"]');
   const messageInput = contactForm.querySelector('textarea[placeholder="Votre message"]');
 
+  // Tableau des inputs pour la création des conteneurs d'erreur
+  const inputs = [nomInput, prenomInput, telephoneInput, emailInput, sujetInput, messageInput];
+  
   // Regex optimisées selon vos spécifications
   const patterns = {
     // Nom/Prénom: commence par une lettre (maj ou min, avec ou sans accent)
     // Puis autorise lettres, accents, espaces, tirets, apostrophes
     nomPrenom: /^[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\s\-']{0,29}$/,
     
-    // Téléphone: uniquement des chiffres de 0 à 9
-    telephone: /^[0-9]+$/,
+    // Téléphone: uniquement des chiffres de 0 à 9 min 10 max 15
+    telephone: /^[0-9]{10,15}$/,
     
     // Email: lettres, chiffres, accents, uniquement @ comme caractère spécial
     email: /^[A-Za-zÀ-ÖØ-öø-ÿ0-9._%+-]+@[A-Za-zÀ-ÖØ-öø-ÿ0-9.-]+\.[A-Za-z]{2,}$/,
@@ -28,9 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // Fonction pour créer les conteneurs de messages d'erreur
-  function createErrorContainers() {
-    const inputs = [nomInput, prenomInput, telephoneInput, emailInput, sujetInput, messageInput];
-    
+  function createErrorContainers(inputs) {
     inputs.forEach(input => {
       if (!input) return; // Ignorer les champs non trouvés
       
@@ -49,8 +50,56 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Créer les conteneurs d'erreurs
-  createErrorContainers();
+  createErrorContainers(inputs);
 
+  // Configuration de la validation pour chaque champ
+  const inputsElements = [
+    {
+      element: nomInput,
+      pattern: patterns.nomPrenom,
+      message: "Nom invalide: doit commencer par une lettre"
+    },
+    {
+      element: prenomInput,
+      pattern: patterns.nomPrenom,
+      message: "Prénom invalide: doit commencer par une lettre"
+    },
+    {
+      element: telephoneInput,
+      pattern: patterns.telephone,
+      message: "Téléphone invalide: uniquement des chiffres"
+    },
+    {
+      element: emailInput,
+      pattern: patterns.email,
+      message: "Adresse email invalide"
+    },
+    {
+      element: sujetInput,
+      pattern: patterns.texte,
+      message: "Caractères non autorisés: < > & * { } [ ]"
+    },
+    {
+      element: messageInput,
+      pattern: patterns.texte,
+      message: "Caractères non autorisés: < > & * { } [ ]"
+    }
+  ];
+
+  // Application des écouteurs d'événements pour tous les champs
+  inputsElements.forEach((config) => {
+    if (config.element) {
+      config.element.addEventListener('input', () => {
+        validerChamp(config.element, config.pattern, config.message);
+      });
+      
+      // Réinitialisation du style lors du focus
+      config.element.addEventListener('focus', function() {
+        this.classList.remove('input-valid', 'input-invalid');
+      });
+    }
+  });
+  
   // Fonction pour valider un champ
   function validerChamp(input, pattern, messageErreur) {
     if (!input) return false;
@@ -58,86 +107,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const valeur = input.value.trim();
     const erreurElement = input.nextElementSibling;
     
-    // Cas particulier pour le téléphone: vérifier la longueur
-    if (input === telephoneInput && pattern.test(valeur)) {
-      if (valeur.length < 10 || valeur.length > 15) {
-        input.classList.remove('input-valid');
-        input.classList.add('input-invalid');
-        if (erreurElement) {
-          erreurElement.textContent = "Le numéro doit contenir entre 10 et 15 chiffres";
-          erreurElement.style.display = 'block';
-        }
-        return false;
-      }
-    }
+    if (!erreurElement) return false;
     
     // Validation principale
     const estValide = pattern.test(valeur);
     
+    // Cas particulier pour le téléphone: vérification déjà intégrée dans la regex
+    // qui impose entre 10 et 15 chiffres
+    
     if (!estValide) {
       input.classList.remove('input-valid');
       input.classList.add('input-invalid');
-      if (erreurElement) {
-        erreurElement.textContent = messageErreur;
-        erreurElement.style.display = 'block';
-      }
+      erreurElement.textContent = messageErreur;
+      erreurElement.style.display = 'block';
     } else {
       input.classList.remove('input-invalid');
       input.classList.add('input-valid');
-      if (erreurElement) {
-        erreurElement.style.display = 'none';
-      }
+      erreurElement.style.display = 'none';
     }
     
     return estValide;
   }
-
-  // Validation en temps réel
-  if (nomInput) {
-    nomInput.addEventListener('input', () => {
-      validerChamp(nomInput, patterns.nomPrenom, "Nom invalide: doit commencer par une lettre");
-    });
-  }
-  
-  if (prenomInput) {
-    prenomInput.addEventListener('input', () => {
-      validerChamp(prenomInput, patterns.nomPrenom, "Prénom invalide: doit commencer par une lettre");
-    });
-  }
-  
-  if (telephoneInput) {
-    telephoneInput.addEventListener('input', () => {
-      validerChamp(telephoneInput, patterns.telephone, "Téléphone invalide: uniquement des chiffres");
-    });
-  }
-  
-  if (emailInput) {
-    emailInput.addEventListener('input', () => {
-      validerChamp(emailInput, patterns.email, "Adresse email invalide");
-    });
-  }
-  
-  if (sujetInput) {
-    sujetInput.addEventListener('input', () => {
-      validerChamp(sujetInput, patterns.texte, "Caractères non autorisés: < > & * { } [ ]");
-    });
-  }
-  
-  if (messageInput) {
-    messageInput.addEventListener('input', () => {
-      validerChamp(messageInput, patterns.texte, "Caractères non autorisés: < > & * { } [ ]");
-    });
-  }
-
-  // Réinitialisation du style lors du focus
-  const allInputs = [nomInput, prenomInput, telephoneInput, emailInput, sujetInput, messageInput];
-  allInputs.forEach(input => {
-    if (!input) return;
-    
-    input.addEventListener('focus', function() {
-      this.classList.remove('input-valid', 'input-invalid');
-    });
-  });
 
   // Validation lors de la soumission du formulaire
   if (contactForm) {
@@ -145,19 +135,29 @@ document.addEventListener('DOMContentLoaded', function() {
       // Empêcher l'envoi du formulaire par défaut
       e.preventDefault();
       
-      // Validation de tous les champs
-      const nomValide = validerChamp(nomInput, patterns.nomPrenom, "Nom invalide: doit commencer par une lettre");
-      const prenomValide = validerChamp(prenomInput, patterns.nomPrenom, "Prénom invalide: doit commencer par une lettre");
-      const telephoneValide = validerChamp(telephoneInput, patterns.telephone, "Téléphone invalide: uniquement des chiffres");
-      const emailValide = validerChamp(emailInput, patterns.email, "Adresse email invalide");
-      const sujetValide = validerChamp(sujetInput, patterns.texte, "Caractères non autorisés: < > & * { } [ ]");
-      const messageValide = validerChamp(messageInput, patterns.texte, "Caractères non autorisés: < > & * { } [ ]");
+      // Validation de tous les champs via inputsElements
+      const validationResults = inputsElements.map(config => {
+        return validerChamp(config.element, config.pattern, config.message);
+      });
+      
+      // Vérifier si tous les champs sont valides
+      const formulaireValide = validationResults.every(isValid => isValid);
       
       // Si tous les champs sont valides, on peut soumettre le formulaire
-      if (nomValide && prenomValide && telephoneValide && emailValide && sujetValide && messageValide) {
+      if (formulaireValide) {
         console.log("Formulaire validé, prêt à être envoyé");
         // Ici vous pourriez ajouter un appel AJAX pour envoyer les données
         alert("Formulaire validé avec succès!");
+        
+        // Réinitialiser le formulaire après validation
+        contactForm.reset();
+        
+        // Supprimer les classes de validation
+        inputsElements.forEach(config => {
+          if (config.element) {
+            config.element.classList.remove('input-valid', 'input-invalid');
+          }
+        });
         
         // Décommenter pour envoyer le formulaire
         // this.submit();
