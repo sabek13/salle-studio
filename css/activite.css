@@ -3,6 +3,12 @@
 
 /* ======= STYLES SPÉCIFIQUES À LA PAGE ACTIVITÉ ======= */
 
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
 /* ======= BANNIÈRE ======= */
 .banner-training {
   width: 100%;
