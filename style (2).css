@@ -148,7 +148,9 @@
 }
 
 /* ======= FOOTER ======= */
-
+.footer-main {
+  background-color: var(--footer-bg);
+}
 
 .footer-infos h6 {
   font-size: 0.95rem;
@@ -233,12 +235,6 @@
 
 .lire-suite:hover:after {
   width: 100%; /* Change la couleur au survol */
-}
-
-footer {
-  background-color: #000;
-  color: #fff;
-  font-size: 0.9rem;
 }
 
 /* Responsive adjustments */
