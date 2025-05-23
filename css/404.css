@@ -1,0 +1,12 @@
+/* Styles for 404 page */
+.error-image {
+    max-width: 200px;
+}
+
+.logo-header {
+    height: 60px;
+}
+
+.logo-footer {
+    height: 35px;
+}

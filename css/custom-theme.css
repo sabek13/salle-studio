@@ -78,6 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo {
   height: 50px;
+  width: auto;
 }
 
 /* ======= NAVIGATION ======= */
@@ -326,21 +327,25 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-/* ======= CLASSES UTILITAIRES ======= */
-.ms-6 {
-  margin-left: 6rem !important;
+/* ======= LOGOS & IMAGES ======= */
+.partner-logo {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-.cliquez {
-  color: var(--primary-color);
-  font-weight: bold;
+.partner-logo:hover {
+  transform: scale(1.05);
 }
 
-.separator {
-  height: 1px;
-  background-color: var(--text-muted);
-  border: none;
-  width: 100%;
+.footer-logo {
+  height: 30px;
+  width: auto;
+}
+
+.logo-364 {
+  height: 35px;
+  width: auto;
 }
 
 /* ======= RESPONSIVE GLOBAL ======= */
@@ -373,6 +378,41 @@ h1, h2, h3, h4, h5, h6 {
   
   .trait {
     padding: 10px 15px;
+  }
+}
+
+/* ======= RESPONSIVE TABLETTE ======= */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Ajustements basiques pour tablette */
+  body {
+    font-size: 18px;
+  }
+  
+  /* Logos */
+  .logo {
+    height: 40px;
+  }
+  
+  .partner-logo {
+    height: 40px;
+    margin: 5px;
+  }
+  
+  /* Contenu principal */
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  /* Menu tablette utilise le même offcanvas que mobile, pas besoin de style spécial */
+  
+  /* Offcanvas en mode tablette - quelques améliorations */
+  .offcanvas {
+    max-width: 350px; /* Plus large en tablette qu'en mobile */
+  }
+  
+  .offcanvas-body .nav-link {
+    font-size: 1.1rem; /* Police plus grande pour tablette */
+    padding: 0.6rem 0; /* Plus d'espace vertical */
   }
 }
 

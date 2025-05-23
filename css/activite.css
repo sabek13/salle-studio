@@ -95,3 +95,42 @@ p {
 .carousel-indicators .active {
   opacity: 1;
 }
+
+/* ======= RESPONSIVE TABLETTE ======= */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Bannière */
+  .banner-training {
+    height: 50vh;
+  }
+
+  /* Carousel */
+  #carouselActivite {
+    height: 18rem;
+  }
+
+  /* Activités */
+  .activite h3 {
+    font-size: 1.1rem;
+  }
+
+  .activite p {
+    font-size: 0.9rem;
+  }
+
+  .activite-img {
+    max-height: 9rem;
+  }
+
+  /* Boutons */
+  .btn-gold {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  /* Flexbox pour les boutons */
+  .col-md-6.d-flex.flex-column .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+}

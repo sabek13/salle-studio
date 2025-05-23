@@ -21,3 +21,29 @@
   padding-left: 15px;
   font-weight: 400;
 }
+
+/* Ajouter à la fin du fichier */
+
+/* ======= RESPONSIVE TABLETTE ======= */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Bannière */
+  .contact-hero {
+    height: 35vh;
+  }
+
+  /* Map */
+  .map-iframe {
+    height: 40vh;
+  }
+
+  /* Formulaire */
+  .container-fluid.bg-white.shadow.py-5.px-4 .row {
+    width: 95% !important;
+  }
+
+  /* Contact info */
+  #contact-info p {
+    font-size: 0.9rem;
+    padding-left: 10px;
+  }
+}

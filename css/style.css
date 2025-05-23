@@ -111,27 +111,6 @@
   max-width: 90%;
 }
 
-.btn-activite {
-  display: inline-block;
-  text-transform: uppercase;
-  color: var(--text-light);
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  border: 1px solid var(--text-light);
-  padding: 0.4rem 1.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-top: 0.5rem;
-}
-
-.btn-activite:hover {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border-color: var(--primary-color);
-}
-
 /* ======= IMAGES ET CARTES ======= */
 .activite-img {
   width: 100%;
@@ -140,12 +119,6 @@
   margin-bottom: 1rem;
 }
 
-
-
-.cliquez {
-  color: var(--primary-color);
-  font-weight: bold;
-}
 
 /* ======= FOOTER ======= */
 
@@ -156,53 +129,7 @@
   color: white;
 }
 
-.footer-link {
-  color: white;
-  text-decoration: underline;
-  font-weight: 500;
-}
-.footer-link:hover {
-  color: var(--primary-color);
-}
 
-.footer-list {
-  padding-left: 0;
-  list-style: none;
-}
-
-
-
-
-
-.trait {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding: 15px 20px;
-  position: relative;
-}
-
-.trait:after {    
-  background: #fff;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  position: absolute;
-  /* Start with a small visible line */
-  width: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: all 0.3s ease;
-}
-
-.trait:hover:after {
-  width: 100%;
-  left: 0;
-  transform: translateX(0);
-}
 
 /* Lien "LIRE LA SUITE" avec trait qui part de la gauche */
 .lire-suite {
@@ -241,12 +168,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 767.98px) {
-  .trait {
-    padding: 10px 15px;
-  }
-}
 
 /* ======= RESPONSIVE ======= */
 @media (max-width: 767.98px) {
@@ -291,5 +212,23 @@ footer {
   
   .slider-title {
     font-size: 1.5rem;
+  }
+}
+
+/* ======= RESPONSIVE TABLETTE ======= */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Carousel home */
+  .carousel-item {
+    height: 70vh;
+  }
+
+  /* Actualités */
+  .lire-suite {
+    font-size: 0.9rem;
+  }
+
+  /* Partenaires */
+  .bg-dark.py-5.text-center .container {
+    max-width: 95%;
   }
 }
