@@ -170,44 +170,12 @@ footer {
 
 
 /* ======= RESPONSIVE ======= */
-@media (max-width: 767.98px) {
-  .header-main .container {
-    padding-right: 70px;
-  }
-  
-  }
 
-  @media (max-width: 991.98px) {
-  .carousel-item {
-    height: 75vh; /* Reduce height on medium devices */
-  }
-
-  .slider-subtitle {
-    margin-top: 30%;
-  }
-  
-  .slider-title {
-    margin-top: 15%;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .carousel-item {
-    height: 60vh; /* Further reduce height on smaller devices */
-  }
-  
-  .slider-title {
-    font-size: 1.8rem;
-  }
-  
-  .slider-subtitle {
-    font-size: 1rem;
-  }
-}
 
 @media (max-width: 575.98px) {
   .carousel-item {
-    height: 50vh; /* Even smaller on mobile devices */
+    height: 50vh; 
+    
   }
   
   .slider-title {
@@ -230,5 +198,48 @@ footer {
   /* Partenaires */
   .bg-dark.py-5.text-center .container {
     max-width: 95%;
+  }
+}
+
+/* Corrections spécifiques pour les sliders en version mobile */
+@media (max-width: 576px) {
+  /* Ajustements généraux pour les sliders sur mobile */
+  .carousel-caption {
+    padding-bottom: 1rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Style pour le premier slide qui a déjà du texte sur l'image */
+  .slide-1 .carousel-caption {
+ /* Fond semi-transparent */
+    bottom: 0;
+    padding-top: 100px;
+    position: absolute;
+  }
+  
+  .slide-1 .carousel-caption .slider-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  
+  /* Styles pour les autres slides */
+  .slide-2 .carousel-caption,
+  .slide-3 .carousel-caption {
+    bottom: 0;
+  }
+  
+  .slide-2 .slider-title,
+  .slide-3 .slider-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .slide-2 .slider-subtitle,
+  .slide-3 .slider-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 }

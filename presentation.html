@@ -23,7 +23,7 @@
       </a>
 
       <!-- Bouton hamburger pour mobile ET tablette -->
-      <button class="btn d-lg-none text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+      <button class="btn d-lg-none text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
         <i class="fa fa-bars fs-4"></i>
       </button>
 
@@ -60,21 +60,22 @@
         <span>EN</span>
       </div>
     </div>
+ 
 
   <!-- Menu Mobile Offcanvas -->
-  <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="mobileMenuLabel">
-        <img src="assets/img/logo.png" alt="Logo Le Studio" class="logo me-2" height="40">
+      <h5 class="offcanvas-title" id="offcanvasMenuLabel">
+        <img src="assets/img/logo.png" alt="Logo Le Studio" class="logo" height="40">
       </h5>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="d-flex justify-content-end mb-4">
-        <div class="lang-switch me-5">
+      <div class="d-flex align-items-center">
+        <div class="lang-switch me-3">
           <span>EN</span>
         </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+    </div>
+    <div class="offcanvas-body">
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
           <a class="nav-link text-white" href="404.html">L'ÉQUIPE</a>
@@ -86,7 +87,7 @@
               <li class="mb-2"><a class="text-white text-decoration-none" href="404.html">LE CYCLING</a></li>
               <li class="mb-2"><a class="text-white text-decoration-none" href="presentation.html">LE TRAINING FONCTIONNEL</a></li>
               <li class="mb-2"><a class="text-white text-decoration-none" href="404.html">LE CROSSFIT</a></li>
-              <li class="mb-2"><a class="text-white text-decoration-none" href="404.html">PERSONAL TRAINING - COACH PERSONNEL</a></li>
+              <li class="mb-2"><a class="text-white text-decoration-none" href="404.html">PERSONAL TRAINING</a></li>
             </ul>
           </div>
         </li>
@@ -104,12 +105,12 @@
         </li>
       </ul>
       
-      <div class="mt-5">
+      <div class="mt-4">
         <p class="text-white fw-bold mb-3"><i class="fa fa-mobile-phone"></i> 05 59 47 84 18</p>
         <div class="d-flex gap-3">
-          <a href="#" class="text-white fs-5"><i class="fa fa-facebook-f"></i></a>
-          <a href="#" class="text-white fs-5"><i class="fa fa-instagram"></i></a>
-          <a href="#" class="text-white fs-5"><i class="fa fa-tripadvisor"></i></a>
+          <a href="https://www.facebook.com" target="_blank" class="text-white"><i class="fa fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.tripadvisor.fr" target="_blank" class="text-white"><i class="fa fa-tripadvisor"></i></a>
         </div>
       </div>
     </div>
