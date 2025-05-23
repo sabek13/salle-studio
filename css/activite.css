@@ -80,6 +80,7 @@ p {
 #carouselActivite .carousel-item img {
   height: 100%;
   object-fit: cover;
+  padding-top: 20px;
 }
 
 .carousel-indicators [data-bs-target] {
