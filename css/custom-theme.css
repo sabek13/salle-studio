@@ -457,3 +457,26 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
   outline: none;
 }
+
+/* ======= RESPONSIVE FORMULAIRE ======= */
+@media (max-width: 767.98px) {
+  /* Ajustement pour le formulaire en responsive */
+  #contactForm .row {
+    flex-direction: column;
+  }
+  
+  #contactForm .col {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  #contactForm .row.mb-3 {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Ajustement de la marge pour le dernier élément de chaque rangée */
+  #contactForm .row.mb-3 .col:last-child {
+    margin-bottom: 1rem;
+  }
+}
