@@ -1,0 +1,6 @@
+{
+  "name": "geo/php-sport",
+  "require": {
+    "phpmailer/phpmailer": "^6.10"
+  }
+}

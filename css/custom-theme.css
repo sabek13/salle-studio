@@ -54,7 +54,12 @@ body {
 }
 
 /* ======= TYPOGRAPHIE ======= */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -76,12 +81,21 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1000;
 }
 
+
+
 .logo {
   height: 50px;
   width: auto;
 }
 
 /* ======= NAVIGATION ======= */
+/* .nav-visible {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  transform: translateX(-50%);
+} */
+
 .nav-link-custom {
   color: var(--text-light) !important;
   font-family: "Bebas Neue", sans-serif;
@@ -228,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-.trait:after {    
+.trait:after {
   background: var(--text-light);
   bottom: 0;
   content: "";
@@ -280,6 +294,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
   font-weight: 500;
 }
+
 .footer-link:hover {
   color: var(--primary-color);
 }
@@ -368,23 +383,28 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .header-main .container {
-    padding-right: 70px; /* Espace pour le bouton langue */
+    padding-right: 70px;
+    /* Espace pour le bouton langue */
   }
 
   .lang-switch {
     top: 0.5rem;
     right: 0.5rem;
   }
-  
+
   .trait {
     padding: 10px 15px;
   }
 }
+
 @media (max-width: 767.98px) {
+
   /* Correction du header */
   .header-main .container {
-    position: relative; /* Pour permettre le positionnement absolu des enfants */
-    padding-right: 15px; /* Réduction de l'espace à droite */
+    position: relative;
+    /* Pour permettre le positionnement absolu des enfants */
+    padding-right: 15px;
+    /* Réduction de l'espace à droite */
   }
 
   /* Positionnement du bouton hamburger */
@@ -394,18 +414,19 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    padding-right: 25px; /* Enlever le padding à droite du bouton */
+    padding-right: 25px;
+    /* Enlever le padding à droite du bouton */
   }
-  
+
   /* Autres styles mobiles existants */
   .carousel-item {
-    height: 60vh; 
+    height: 60vh;
   }
-  
+
   .slider-title {
     font-size: 1.8rem;
   }
-  
+
   .slider-subtitle {
     font-size: 1rem;
   }
@@ -413,36 +434,40 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ======= RESPONSIVE TABLETTE ======= */
 @media (min-width: 768px) and (max-width: 991px) {
+
   /* Ajustements basiques pour tablette */
   body {
     font-size: 18px;
   }
-  
+
   /* Logos */
   .logo {
     height: 40px;
   }
-  
+
   .partner-logo {
     height: 40px;
     margin: 5px;
   }
-  
+
   /* Contenu principal */
   .section-title {
     font-size: 2rem;
   }
-  
+
   /* Menu tablette utilise le même offcanvas que mobile, pas besoin de style spécial */
-  
+
   /* Offcanvas en mode tablette - quelques améliorations */
   .offcanvas {
-    max-width: 350px; /* Plus large en tablette qu'en mobile */
+    max-width: 350px;
+    /* Plus large en tablette qu'en mobile */
   }
-  
+
   .offcanvas-body .nav-link {
-    font-size: 1.1rem; /* Police plus grande pour tablette */
-    padding: 0.6rem 0; /* Plus d'espace vertical */
+    font-size: 1.1rem;
+    /* Police plus grande pour tablette */
+    padding: 0.6rem 0;
+    /* Plus d'espace vertical */
   }
 }
 
@@ -450,7 +475,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-toggler {
   padding: 0.25rem 0.5rem;
   font-size: 1rem;
-  z-index: 99; 
+  z-index: 99;
 }
 
 .navbar-toggler:focus {
@@ -460,21 +485,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ======= RESPONSIVE FORMULAIRE ======= */
 @media (max-width: 767.98px) {
+
   /* Ajustement pour le formulaire en responsive */
   #contactForm .row {
     flex-direction: column;
   }
-  
+
   #contactForm .col {
     width: 100%;
     padding: 0;
     margin-bottom: 1rem;
   }
-  
+
   #contactForm .row.mb-3 {
     margin-bottom: 0 !important;
   }
-  
+
   /* Ajustement de la marge pour le dernier élément de chaque rangée */
   #contactForm .row.mb-3 .col:last-child {
     margin-bottom: 1rem;
